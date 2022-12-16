@@ -1,0 +1,30 @@
+name: DailyScreenShot
+on:
+  schedule:
+    - cron: "47 14 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    # 以下が実際のステップ
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16.13.1
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16.13.1'
+    - name: install command
+      run: |
+             yarn install
+             yarn add properties-reader
+             yarn add puppeteer
+             yarn add sharp
+             yarn add discord.js@13
+
+    - name: RUN script
+      run: node index.js
