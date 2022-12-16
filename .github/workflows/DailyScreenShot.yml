@@ -28,3 +28,8 @@ jobs:
 
     - name: RUN script
       run: node index.js
+    - name: test upload-artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: Posted Image
+        path: extract.png
