@@ -1,4 +1,0 @@
-name: "Hello World"
-runs:
-  using: "node12"
-  main: "index.js"
