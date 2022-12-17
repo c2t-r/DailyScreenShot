@@ -1,7 +1,7 @@
 name: DailyScreenShot
 on:
   schedule:
-    - cron: "47 14 * * *"
+    - cron: "00 15 * * *" # UTC+0
   workflow_dispatch:
 
 jobs:
